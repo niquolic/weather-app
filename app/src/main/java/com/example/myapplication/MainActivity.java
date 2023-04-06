@@ -8,7 +8,13 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     private final String API_KEY = "b8e8d154cae645d3beb70902230604";
-    private final String LOCATION = "Mouvaux";
+    private String LOCATION = "Mouvaux";
     private TextView temperatureTextView;
     private TextView cityTextView;
     private LocationManager locationManager;
@@ -29,6 +35,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.weather_default);
         temperatureTextView = findViewById(R.id.temperatureTextView);
         cityTextView = findViewById(R.id.cityTextView);
+        EditText cityEditText = findViewById(R.id.cityEditText);
+        Button searchButton = findViewById(R.id.searchButton);
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String city = cityEditText.getText().toString();
+                if (!TextUtils.isEmpty(city)) {
+                    LOCATION = city;
+                    getWeatherData();
+                } else {
+                    Toast.makeText(MainActivity.this, "Entrez un nom de ville valide", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         // Initialize location manager and provider
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -50,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
                     // Get weather data for current location
                     getWeatherDataPos(latitude, longitude);
                 } else {
-                    // If location is null, display error message
+                    // If location is null, display error message and launch by city
                     temperatureTextView.setText("Location not available");
+                    getWeatherData();
                 }
             }
         } else {
