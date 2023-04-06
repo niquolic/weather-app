@@ -12,8 +12,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private String LOCATION = "Mouvaux";
     private TextView temperatureTextView;
     private TextView cityTextView;
+    private ImageView weatherNowImageView;
     private LocationManager locationManager;
     private String provider;
 
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.weather_default);
         temperatureTextView = findViewById(R.id.temperatureTextView);
         cityTextView = findViewById(R.id.cityTextView);
+        weatherNowImageView = findViewById(R.id.weatherNowImageView);
         EditText cityEditText = findViewById(R.id.cityEditText);
         Button searchButton = findViewById(R.id.searchButton);
 
@@ -103,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
                 double temperature = weatherData.getCurrent().getTemp_c();
                 temperatureTextView.setText(String.format("%.1f °C", temperature));
                 cityTextView.setText(weatherData.getLocation().getName());
+                // Récupération de l'URL vers l'image
+                String iconUrl = weatherData.getCurrent().getCondition().getIcon();
+                iconUrl = "https://"+iconUrl.substring(2);
+                // Affichage de l'image
+                Glide.with(MainActivity.this).load(iconUrl).into(weatherNowImageView);
             }
 
             @Override

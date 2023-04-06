@@ -27,6 +27,18 @@
         android:layout_toRightOf="@+id/cityEditText"
         android:layout_toEndOf="@+id/cityEditText"/>
 
+
+    <ImageView
+        android:id="@+id/weatherNowImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/searchButton"
+        android:layout_marginTop="32dp"
+        android:contentDescription="Meteo"
+        android:maxWidth="30dp"
+        android:maxHeight="30dp"
+        android:translationX="125dp" />
+
     <TextView
         android:id="@+id/temperatureTextView"
         android:layout_width="wrap_content"
