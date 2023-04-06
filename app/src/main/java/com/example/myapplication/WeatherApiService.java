@@ -10,4 +10,11 @@ public interface WeatherApiService {
             @Query("key") String apiKey,
             @Query("q") String location
     );
+
+    @GET("current.json")
+    Call<WeatherData> getCurrentWeatherPos(
+            @Query("key") String apiKey,
+            @Query("lat") double latitude,
+            @Query("lon") double longitude
+    );
 }
