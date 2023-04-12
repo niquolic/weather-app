@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         WeatherApiService service = retrofit.create(WeatherApiService.class);
-        Call<WeatherData> call = service.getCurrentWeather(API_KEY, LOCATION);
+        Call<WeatherData> call = service.getCurrentWeather(API_KEY, LOCATION, 7);
         call.enqueue(new Callback<WeatherData>() {
             @Override
             public void onResponse(Call<WeatherData> call, Response<WeatherData> response) {
@@ -113,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 iconUrl = "https://"+iconUrl.substring(2);
                 // Affichage de l'image
                 Glide.with(MainActivity.this).load(iconUrl).into(weatherNowImageView);
+
             }
 
             @Override
@@ -129,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         WeatherApiService service = retrofit.create(WeatherApiService.class);
-        Call<WeatherData> call = service.getCurrentWeatherPos(API_KEY, latitude, longitude);
+        Call<WeatherData> call = service.getCurrentWeatherPos(API_KEY, latitude, longitude, 7);
         call.enqueue(new Callback<WeatherData>() {
             @Override
             public void onResponse(Call<WeatherData> call, Response<WeatherData> response) {
@@ -142,6 +145,11 @@ public class MainActivity extends AppCompatActivity {
                 double temperature = weatherData.getCurrent().getTemp_c();
                 temperatureTextView.setText(String.format("%.1f °C", temperature));
                 cityTextView.setText(weatherData.getLocation().getName());
+                // Récupération de l'URL vers l'image
+                String iconUrl = weatherData.getCurrent().getCondition().getIcon();
+                iconUrl = "https://"+iconUrl.substring(2);
+                // Affichage de l'image
+                Glide.with(MainActivity.this).load(iconUrl).into(weatherNowImageView);
             }
 
             @Override
