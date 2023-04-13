@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 import retrofit2.Call;
@@ -111,13 +112,21 @@ public class MainActivity extends AppCompatActivity {
                 double temperature = weatherData.getCurrent().getTemp_c();
                 temperatureTextView.setText(String.format("%.1f °C", temperature));
                 cityTextView.setText(weatherData.getLocation().getName());
+                WeatherData.forecast.Forecastday[] forecast = weatherData.getForecast().getForecastday();
+                Log.d("Forecast", forecast.toString());
                 // Récupération de l'URL vers l'image
                 String iconUrl = weatherData.getCurrent().getCondition().getIcon();
                 iconUrl = "https://"+iconUrl.substring(2);
                 // Affichage de l'image
                 Glide.with(MainActivity.this).load(iconUrl).into(weatherNowImageView);
-                String Forecast = String.valueOf(weatherData.getForecast());
-                Log.d("Forecast", Forecast);
+                /*WeatherData.forecast.forecastday[] forecastday = weatherData.getForecastday();
+                if (forecastday != null && forecastday.length > 0) {
+                    WeatherData.forecast.forecastday.day firstDay = forecastday[0].getDay();
+                    String conditionText = firstDay.getCondition().getText();
+                    Log.d("Condition text", conditionText);
+                } else {
+                    Log.d("Forecastday", "forecastday is null or empty");
+                }*/
 
             }
 
