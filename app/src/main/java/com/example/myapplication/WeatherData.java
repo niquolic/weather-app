@@ -199,7 +199,8 @@ public class WeatherData {
 
         public static class Forecastday {
             private String date;
-            private ConditionDay day;
+            private ConditionDay conditionday;
+            private Day days;
             private Hour[] hour;
 
             public String getDate() {
@@ -207,18 +208,45 @@ public class WeatherData {
             }
 
             public ConditionDay getDay() {
-                return day;
+                return conditionday;
+            }
+
+            public Day getDays() {
+                return days;
             }
 
             public Hour[] getHour() {
                 return hour;
             }
 
+            static class Day {
+                private double maxtemp_c;
+                private double mintemp_c;
+                private ConditionDay condition;
+
+                public double getMaxtemp_c() {
+                    return maxtemp_c;
+                }
+
+                public double getMintemp_c() {
+                    return mintemp_c;
+                }
+
+                public ConditionDay getCondition() {
+                    return condition;
+                }
+            }
+
             public static class ConditionDay {
                 private String text;
+                private String icon;
 
                 public String getText() {
                     return text;
+                }
+
+                public String getIcon() {
+                    return icon;
                 }
             }
 
@@ -242,9 +270,14 @@ public class WeatherData {
 
             public static class ConditionHour {
                 private String text;
+                private String icon;
 
                 public String getText() {
                     return text;
+                }
+
+                public String getIcon() {
+                    return icon;
                 }
             }
         }

@@ -20,6 +20,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import java.lang.reflect.Array;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -119,8 +122,48 @@ public class MainActivity extends AppCompatActivity {
                 iconUrl = "https://"+iconUrl.substring(2);
                 // Affichage de l'image
                 Glide.with(MainActivity.this).load(iconUrl).into(weatherNowImageView);
-                for (int i = 0; i < forecastday.length; i++) {
-                    Log.d("Forecast", forecastday[i].getDate());
+                for (int i = 1; i < 24; i++) {
+                    WeatherData.forecast.Forecastday.Hour[] hours = forecastday[0].getHour();
+                    Log.d("Hour", String.valueOf(hours));
+                    String time = hours[i].getTime();
+                    double temp_c = hours[i].getTemp_c();
+                    String condition = hours[i].getCondition().getIcon();
+                    int hourTextViewId = getResources().getIdentifier("textViewHour" + i, "id", getPackageName());
+                    TextView textViewHour = findViewById(hourTextViewId);
+                    int imageViewId = getResources().getIdentifier("imageViewIcon" + i, "id", getPackageName());
+                    ImageView imageViewIcon = findViewById(imageViewId);
+                    int tempTextViewId = getResources().getIdentifier("textViewTemp" + i, "id", getPackageName());
+                    TextView textViewTemp = findViewById(tempTextViewId);
+                    String hour = time.substring(11, 13); // Get the hour from the time
+                    textViewHour.setText(String.format("%sh", hour));
+                    textViewTemp.setText(String.format("%.1f °C", temp_c));
+                    // Set the image for the corresponding hour
+                    Glide.with(MainActivity.this).load("https:"+hours[i].getCondition().getIcon().substring(2)).into(imageViewIcon);
+                }
+                for (int i = 1; i < 7; i++){
+                    //WeatherData.forecast.Forecastday[] forecastdays = WeatherData.forecast.getForecastday();
+                    double maxtemp_c = forecastday[i].getDays().getMaxtemp_c();
+                    double mintemp_c = forecastday[i].getDays().getMintemp_c();
+                    String condition = forecastday[i].getDays().getCondition().getIcon();
+                    String day = forecastday[i].getDate();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    Date date = null;
+                    try {
+                        date = dateFormat.parse(day);
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                    dateFormat.applyPattern("EEEE");
+                    String dayOfWeek = dateFormat.format(date);
+                    int dayViewFieldId = getResources().getIdentifier("dayView" + i, "id", getPackageName());
+                    TextView dayView = findViewById(dayViewFieldId);
+                    int imageViewId = getResources().getIdentifier("imageViewWeather" + i, "id", getPackageName());
+                    ImageView imageViewWeather = findViewById(imageViewId);
+                    int tempViewFieldId = getResources().getIdentifier("tempView" + i, "id", getPackageName());
+                    TextView tempView = findViewById(tempViewFieldId);
+                    tempView.setText(String.format("%.1f °C", mintemp_c+" -- "+maxtemp_c));
+                    Glide.with(MainActivity.this).load("https:"+forecastday[i].getDays().getCondition().getIcon().substring(2)).into(imageViewWeather);
+                    dayView.setText(dayOfWeek);
                 }
 
             }
