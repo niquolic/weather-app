@@ -71,10 +71,509 @@
             android:orientation="horizontal"
             tools:context=".MainActivity">
 
-            <ListView
-                android:id="@+id/hourlyForecastListView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="03 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="04 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="05 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="06 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="07 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="09 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="19 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewHour24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23 h"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="24sp"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIcon24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Meteo" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </HorizontalScrollView>
