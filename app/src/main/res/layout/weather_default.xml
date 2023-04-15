@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#8BADF5"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditText
@@ -15,7 +16,9 @@
         android:layout_marginTop="50dp"
         android:layout_marginLeft="60dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"/>
 
     <Button
         android:id="@+id/searchButton"
@@ -25,7 +28,8 @@
         android:layout_marginTop="50dp"
         android:layout_marginLeft="16dp"
         android:layout_toRightOf="@+id/cityEditText"
-        android:layout_toEndOf="@+id/cityEditText"/>
+        android:layout_toEndOf="@+id/cityEditText"
+        android:textColor="#FFFFFF"/>
 
 
     <ImageView
@@ -33,7 +37,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@+id/searchButton"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="Meteo"
         android:maxWidth="30dp"
         android:maxHeight="30dp"
@@ -47,7 +51,8 @@
         android:textSize="40sp"
         android:layout_centerInParent="true"
         android:layout_below="@+id/searchButton"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="180dp"
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:id="@+id/cityTextView"
@@ -57,14 +62,15 @@
         android:textSize="24sp"
         android:layout_below="@+id/temperatureTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:textColor="#FFFFFF"/>
 
     <HorizontalScrollView
         android:id="@+id/hourlyForecastHorizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cityTextView"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp">
 
         <LinearLayout
@@ -85,7 +91,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="00 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon1"
@@ -102,7 +109,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -118,7 +126,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="01 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon2"
@@ -135,7 +144,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -151,7 +161,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="02 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon3"
@@ -167,7 +178,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -183,7 +195,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="03 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon4"
@@ -199,7 +212,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -215,7 +229,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="04 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon5"
@@ -231,7 +246,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -247,7 +263,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="05 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon6"
@@ -263,7 +280,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -279,7 +297,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="06 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon7"
@@ -295,7 +314,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -311,7 +331,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="07 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon8"
@@ -327,7 +348,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -343,7 +365,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="08 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon9"
@@ -359,7 +382,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -375,7 +399,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="09 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon10"
@@ -391,7 +416,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -407,7 +433,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="10 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon11"
@@ -423,7 +450,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -439,7 +467,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="11 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon12"
@@ -455,7 +484,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -471,7 +501,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="12 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon13"
@@ -487,7 +518,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -503,7 +535,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="13 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon14"
@@ -519,7 +552,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -535,7 +569,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="14 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon15"
@@ -551,7 +586,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -567,7 +603,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="15 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon16"
@@ -583,7 +620,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -599,7 +637,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="16 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon17"
@@ -615,7 +654,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -631,7 +671,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="17 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon18"
@@ -647,7 +688,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -663,7 +705,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="18 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon19"
@@ -679,7 +722,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -695,7 +739,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="19 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon20"
@@ -712,7 +757,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -728,7 +774,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="20 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon21"
@@ -744,7 +791,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -760,7 +808,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="21 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon22"
@@ -776,7 +825,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -793,7 +843,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="22 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon23"
@@ -809,7 +860,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -826,7 +878,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="23 h"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewIcon24"
@@ -842,7 +895,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -852,6 +906,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/hourlyForecastHorizontalScrollView">
 
         <LinearLayout
@@ -878,11 +933,12 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="Today"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewWeather0"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:contentDescription="Meteo" />
@@ -891,10 +947,11 @@
                     android:id="@+id/tempView0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -916,11 +973,12 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="Today"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewWeather1"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:contentDescription="Meteo" />
@@ -929,10 +987,11 @@
                     android:id="@+id/tempView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -954,11 +1013,12 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="Today"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewWeather2"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:contentDescription="Meteo" />
@@ -967,10 +1027,11 @@
                     android:id="@+id/tempView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -992,11 +1053,12 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="Today"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewWeather3"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:contentDescription="Meteo" />
@@ -1005,10 +1067,11 @@
                     android:id="@+id/tempView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -1030,11 +1093,12 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="Today"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewWeather4"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:contentDescription="Meteo" />
@@ -1043,10 +1107,11 @@
                     android:id="@+id/tempView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -1068,11 +1133,12 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="Today"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewWeather5"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:contentDescription="Meteo" />
@@ -1081,10 +1147,11 @@
                     android:id="@+id/tempView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 
@@ -1106,11 +1173,12 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="Today"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
                 <ImageView
                     android:id="@+id/imageViewWeather6"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:contentDescription="Meteo" />
@@ -1119,10 +1187,11 @@
                     android:id="@+id/tempView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="11dp"
                     android:text="0°"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"/>
 
             </LinearLayout>
 

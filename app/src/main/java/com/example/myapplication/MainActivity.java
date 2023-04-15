@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -76,18 +77,24 @@ public class MainActivity extends AppCompatActivity {
                 // Request location permissions if not already granted
                 ActivityCompat.requestPermissions(this, new String[] { android.Manifest.permission.ACCESS_FINE_LOCATION }, 1);
             } else {
-                Location location = locationManager.getLastKnownLocation(provider);
-                if (location != null) {
-                    // Get latitude and longitude
-                    double latitude = location.getLatitude();
-                    double longitude = location.getLongitude();
-                    // Get weather data for current location
-                    getWeatherDataPos(latitude, longitude);
+                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+                if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
+                        @Override
+                        public void onLocationChanged(Location location) {
+                            double latitude = location.getLatitude();
+                            double longitude = location.getLongitude();
+                            getWeatherDataPos(latitude, longitude);
+                            locationManager.removeUpdates(this);
+                        }
+                    });
                 } else {
-                    // If location is null, display error message and launch by city
+                    // If GPS provider is not enabled, display error message and launch by city
                     temperatureTextView.setText("Location not available");
                     getWeatherData();
                 }
+
             }
         } else {
             // If location provider is disabled, display error message
@@ -116,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
                 temperatureTextView.setText(String.format("%.1f °C", temperature));
                 cityTextView.setText(weatherData.getLocation().getName());
                 WeatherData.forecast.Forecastday[] forecastday = weatherData.getForecast().getForecastday();
-                Log.d("Forecast", forecastday.toString());
                 // Récupération de l'URL vers l'image
                 String iconUrl = weatherData.getCurrent().getCondition().getIcon();
                 iconUrl = "https://"+iconUrl.substring(2);
@@ -124,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
                 Glide.with(MainActivity.this).load(iconUrl).into(weatherNowImageView);
                 for (int i = 0; i < 24; i++) {
                     WeatherData.forecast.Forecastday.Hour[] hours = forecastday[0].getHour();
-                    Log.d("Hour", String.valueOf(hours));
                     String time = hours[i].getTime();
                     double temp_c = hours[i].getTemp_c();
                     String condition = hours[i].getCondition().getIcon();
@@ -141,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
                     Glide.with(MainActivity.this).load("https:"+hours[i].getCondition().getIcon().substring(2)).into(imageViewIcon);
                 }
                 for (int i = 0; i < 7; i++){
-                    Log.d("ForecastdayArray", String.valueOf(forecastday[i].getDay()));
                     double maxtemp_c = forecastday[i].getDay().getMaxtemp_c();
                     double mintemp_c = forecastday[i].getDay().getMintemp_c();
                     String condition = forecastday[i].getDay().getCondition().getIcon();
@@ -182,7 +186,8 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         WeatherApiService service = retrofit.create(WeatherApiService.class);
-        Call<WeatherData> call = service.getCurrentWeatherPos(API_KEY, latitude, longitude, 7);
+        String pos = latitude+","+longitude;
+        Call<WeatherData> call = service.getCurrentWeatherPos(API_KEY, pos, 7);
         call.enqueue(new Callback<WeatherData>() {
             @Override
             public void onResponse(Call<WeatherData> call, Response<WeatherData> response) {
@@ -195,11 +200,54 @@ public class MainActivity extends AppCompatActivity {
                 double temperature = weatherData.getCurrent().getTemp_c();
                 temperatureTextView.setText(String.format("%.1f °C", temperature));
                 cityTextView.setText(weatherData.getLocation().getName());
+                WeatherData.forecast.Forecastday[] forecastday = weatherData.getForecast().getForecastday();
                 // Récupération de l'URL vers l'image
                 String iconUrl = weatherData.getCurrent().getCondition().getIcon();
                 iconUrl = "https://"+iconUrl.substring(2);
                 // Affichage de l'image
                 Glide.with(MainActivity.this).load(iconUrl).into(weatherNowImageView);
+                for (int i = 0; i < 24; i++) {
+                    WeatherData.forecast.Forecastday.Hour[] hours = forecastday[0].getHour();
+                    String time = hours[i].getTime();
+                    double temp_c = hours[i].getTemp_c();
+                    String condition = hours[i].getCondition().getIcon();
+                    int hourTextViewId = getResources().getIdentifier("textViewHour" + (i+1), "id", getPackageName());
+                    TextView textViewHour = findViewById(hourTextViewId);
+                    int imageViewId = getResources().getIdentifier("imageViewIcon" + (i+1), "id", getPackageName());
+                    ImageView imageViewIcon = findViewById(imageViewId);
+                    int tempTextViewId = getResources().getIdentifier("textViewTemp" + (i+1), "id", getPackageName());
+                    TextView textViewTemp = findViewById(tempTextViewId);
+                    String hour = time.substring(11, 13); // Get the hour from the time
+                    textViewHour.setText(String.format("%sh", hour));
+                    textViewTemp.setText(String.format("%.1f °C", temp_c));
+                    // Set the image for the corresponding hour
+                    Glide.with(MainActivity.this).load("https:"+hours[i].getCondition().getIcon().substring(2)).into(imageViewIcon);
+                }
+                for (int i = 0; i < 7; i++){
+                    double maxtemp_c = forecastday[i].getDay().getMaxtemp_c();
+                    double mintemp_c = forecastday[i].getDay().getMintemp_c();
+                    String condition = forecastday[i].getDay().getCondition().getIcon();
+                    String day = forecastday[i].getDate();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    Date date = null;
+                    try {
+                        date = dateFormat.parse(day);
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                    dateFormat.applyPattern("EEEE");
+                    String dayOfWeek = dateFormat.format(date);
+                    int dayViewFieldId = getResources().getIdentifier("dayView" + i, "id", getPackageName());
+                    TextView dayView = findViewById(dayViewFieldId);
+                    int imageViewId = getResources().getIdentifier("imageViewWeather" + i, "id", getPackageName());
+                    ImageView imageViewWeather = findViewById(imageViewId);
+                    int tempViewFieldId = getResources().getIdentifier("tempView" + i, "id", getPackageName());
+                    TextView tempView = findViewById(tempViewFieldId);
+                    tempView.setText(String.format("%.1f °C -- %.1f °C", mintemp_c, maxtemp_c));
+                    Glide.with(MainActivity.this).load("https:"+forecastday[i].getDay().getCondition().getIcon().substring(2)).into(imageViewWeather);
+                    dayView.setText(dayOfWeek);
+                }
+
             }
 
             @Override
