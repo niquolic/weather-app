@@ -200,26 +200,26 @@ public class WeatherData {
         public static class Forecastday {
             private String date;
             private ConditionDay conditionday;
-            private Day days;
+            private Day day;
             private Hour[] hour;
 
             public String getDate() {
                 return date;
             }
 
-            public ConditionDay getDay() {
+            public ConditionDay getConditionday() {
                 return conditionday;
             }
 
-            public Day getDays() {
-                return days;
+            public Day getDay() {
+                return day;
             }
 
             public Hour[] getHour() {
                 return hour;
             }
 
-            static class Day {
+            public static class Day {
                 private double maxtemp_c;
                 private double mintemp_c;
                 private ConditionDay condition;

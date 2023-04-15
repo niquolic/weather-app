@@ -122,17 +122,17 @@ public class MainActivity extends AppCompatActivity {
                 iconUrl = "https://"+iconUrl.substring(2);
                 // Affichage de l'image
                 Glide.with(MainActivity.this).load(iconUrl).into(weatherNowImageView);
-                for (int i = 1; i < 24; i++) {
+                for (int i = 0; i < 24; i++) {
                     WeatherData.forecast.Forecastday.Hour[] hours = forecastday[0].getHour();
                     Log.d("Hour", String.valueOf(hours));
                     String time = hours[i].getTime();
                     double temp_c = hours[i].getTemp_c();
                     String condition = hours[i].getCondition().getIcon();
-                    int hourTextViewId = getResources().getIdentifier("textViewHour" + i, "id", getPackageName());
+                    int hourTextViewId = getResources().getIdentifier("textViewHour" + (i+1), "id", getPackageName());
                     TextView textViewHour = findViewById(hourTextViewId);
-                    int imageViewId = getResources().getIdentifier("imageViewIcon" + i, "id", getPackageName());
+                    int imageViewId = getResources().getIdentifier("imageViewIcon" + (i+1), "id", getPackageName());
                     ImageView imageViewIcon = findViewById(imageViewId);
-                    int tempTextViewId = getResources().getIdentifier("textViewTemp" + i, "id", getPackageName());
+                    int tempTextViewId = getResources().getIdentifier("textViewTemp" + (i+1), "id", getPackageName());
                     TextView textViewTemp = findViewById(tempTextViewId);
                     String hour = time.substring(11, 13); // Get the hour from the time
                     textViewHour.setText(String.format("%sh", hour));
@@ -140,11 +140,11 @@ public class MainActivity extends AppCompatActivity {
                     // Set the image for the corresponding hour
                     Glide.with(MainActivity.this).load("https:"+hours[i].getCondition().getIcon().substring(2)).into(imageViewIcon);
                 }
-                for (int i = 1; i < 7; i++){
-                    //WeatherData.forecast.Forecastday[] forecastdays = WeatherData.forecast.getForecastday();
-                    double maxtemp_c = forecastday[i].getDays().getMaxtemp_c();
-                    double mintemp_c = forecastday[i].getDays().getMintemp_c();
-                    String condition = forecastday[i].getDays().getCondition().getIcon();
+                for (int i = 0; i < 7; i++){
+                    Log.d("ForecastdayArray", String.valueOf(forecastday[i].getDay()));
+                    double maxtemp_c = forecastday[i].getDay().getMaxtemp_c();
+                    double mintemp_c = forecastday[i].getDay().getMintemp_c();
+                    String condition = forecastday[i].getDay().getCondition().getIcon();
                     String day = forecastday[i].getDate();
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                     Date date = null;
@@ -161,8 +161,8 @@ public class MainActivity extends AppCompatActivity {
                     ImageView imageViewWeather = findViewById(imageViewId);
                     int tempViewFieldId = getResources().getIdentifier("tempView" + i, "id", getPackageName());
                     TextView tempView = findViewById(tempViewFieldId);
-                    tempView.setText(String.format("%.1f °C", mintemp_c+" -- "+maxtemp_c));
-                    Glide.with(MainActivity.this).load("https:"+forecastday[i].getDays().getCondition().getIcon().substring(2)).into(imageViewWeather);
+                    tempView.setText(String.format("%.1f °C -- %.1f °C", mintemp_c, maxtemp_c));
+                    Glide.with(MainActivity.this).load("https:"+forecastday[i].getDay().getCondition().getIcon().substring(2)).into(imageViewWeather);
                     dayView.setText(dayOfWeek);
                 }
 

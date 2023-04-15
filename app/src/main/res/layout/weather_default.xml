@@ -181,7 +181,7 @@
                     android:id="@+id/textViewHour4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:text="03 h"
                     android:textSize="24sp" />
 
@@ -849,270 +849,285 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/linearLayoutForecast1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
+        android:layout_height="match_parent"
         android:layout_below="@+id/hourlyForecastHorizontalScrollView">
 
-
-        <TextView
-            android:id="@+id/dayView1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="Today"
-            android:textSize="24sp" />
+            android:orientation="vertical"
+            android:layout_below="@+id/hourlyForecastHorizontalScrollView">
 
-        <ImageView
-            android:id="@+id/imageViewWeather1"
-            android:layout_marginLeft="30dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="Meteo" />
-
-        <TextView
-            android:id="@+id/tempView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="11dp"
-            android:text="0°"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/linearLayoutForecast2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
-        android:layout_below="@+id/linearLayoutForecast1">
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/linearLayoutForecast0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:context=".MainActivity"
+                android:layout_below="@+id/hourlyForecastHorizontalScrollView">
 
 
-        <TextView
-            android:id="@+id/dayView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="Today"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/dayView0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Today"
+                    android:textSize="24sp" />
 
-        <ImageView
-            android:id="@+id/imageViewWeather2"
-            android:layout_marginLeft="30dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="Meteo" />
+                <ImageView
+                    android:id="@+id/imageViewWeather0"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="Meteo" />
 
-        <TextView
-            android:id="@+id/tempView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="11dp"
-            android:text="0°"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/tempView0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="11dp"
+                    android:text="0°"
+                    android:textSize="24sp" />
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/linearLayoutForecast3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
-        android:layout_below="@+id/linearLayoutForecast2">
-
-
-        <TextView
-            android:id="@+id/dayView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="Today"
-            android:textSize="24sp" />
-
-        <ImageView
-            android:id="@+id/imageViewWeather3"
-            android:layout_marginLeft="30dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="Meteo" />
-
-        <TextView
-            android:id="@+id/tempView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="11dp"
-            android:text="0°"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/linearLayoutForecast4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
-        android:layout_below="@+id/linearLayoutForecast3">
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/linearLayoutForecast1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:context=".MainActivity"
+                android:layout_below="@+id/linearLayoutForecast0">
 
 
-        <TextView
-            android:id="@+id/dayView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="Today"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/dayView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Today"
+                    android:textSize="24sp" />
 
-        <ImageView
-            android:id="@+id/imageViewWeather4"
-            android:layout_marginLeft="30dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="Meteo" />
+                <ImageView
+                    android:id="@+id/imageViewWeather1"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="Meteo" />
 
-        <TextView
-            android:id="@+id/tempView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="11dp"
-            android:text="0°"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/tempView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="11dp"
+                    android:text="0°"
+                    android:textSize="24sp" />
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/linearLayoutForecast5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
-        android:layout_below="@+id/linearLayoutForecast4">
-
-
-        <TextView
-            android:id="@+id/dayView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="Today"
-            android:textSize="24sp" />
-
-        <ImageView
-            android:id="@+id/imageViewWeather5"
-            android:layout_marginLeft="30dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="Meteo" />
-
-        <TextView
-            android:id="@+id/tempView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="11dp"
-            android:text="0°"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/linearLayoutForecast6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
-        android:layout_below="@+id/linearLayoutForecast5">
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/linearLayoutForecast2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:context=".MainActivity"
+                android:layout_below="@+id/linearLayoutForecast1">
 
 
-        <TextView
-            android:id="@+id/dayView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="Today"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/dayView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Today"
+                    android:textSize="24sp" />
 
-        <ImageView
-            android:id="@+id/imageViewWeather6"
-            android:layout_marginLeft="30dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="Meteo" />
+                <ImageView
+                    android:id="@+id/imageViewWeather2"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="Meteo" />
 
-        <TextView
-            android:id="@+id/tempView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="11dp"
-            android:text="0°"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/tempView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="11dp"
+                    android:text="0°"
+                    android:textSize="24sp" />
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/linearLayoutForecast7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
-        android:layout_below="@+id/linearLayoutForecast6">
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/linearLayoutForecast3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:context=".MainActivity"
+                android:layout_below="@+id/linearLayoutForecast2">
 
 
-        <TextView
-            android:id="@+id/dayView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="11dp"
-            android:text="Today"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/dayView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Today"
+                    android:textSize="24sp" />
 
-        <ImageView
-            android:id="@+id/imageViewWeather7"
-            android:layout_marginLeft="30dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="Meteo" />
+                <ImageView
+                    android:id="@+id/imageViewWeather3"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="Meteo" />
 
-        <TextView
-            android:id="@+id/tempView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="11dp"
-            android:text="0°"
-            android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/tempView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="11dp"
+                    android:text="0°"
+                    android:textSize="24sp" />
 
-    </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/linearLayoutForecast4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:context=".MainActivity"
+                android:layout_below="@+id/linearLayoutForecast3">
+
+
+                <TextView
+                    android:id="@+id/dayView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Today"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/imageViewWeather4"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="Meteo" />
+
+                <TextView
+                    android:id="@+id/tempView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="11dp"
+                    android:text="0°"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/linearLayoutForecast5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:context=".MainActivity"
+                android:layout_below="@+id/linearLayoutForecast4">
+
+
+                <TextView
+                    android:id="@+id/dayView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Today"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/imageViewWeather5"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="Meteo" />
+
+                <TextView
+                    android:id="@+id/tempView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="11dp"
+                    android:text="0°"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/linearLayoutForecast6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:context=".MainActivity"
+                android:layout_below="@+id/linearLayoutForecast5">
+
+
+                <TextView
+                    android:id="@+id/dayView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Today"
+                    android:textSize="24sp" />
+
+                <ImageView
+                    android:id="@+id/imageViewWeather6"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:contentDescription="Meteo" />
+
+                <TextView
+                    android:id="@+id/tempView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="11dp"
+                    android:text="0°"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
